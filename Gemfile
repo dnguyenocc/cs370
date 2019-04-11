@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rails-controller-testing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -56,11 +57,10 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
+  gem 'codeclimate-test-reporter'
+  gem 'simplecov'
+  gem 'coveralls'
 
-end
-
-group :production do
-  gem 'rails_12factor'  # Heroku-specific production settings
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
