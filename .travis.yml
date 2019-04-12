@@ -9,7 +9,7 @@ bundler_args: --without production
 env:
   global:
     # in TravisCI settings, set CCKEY to your CodeClimate Test Reporter ID:
-    - CC_TEST_REPORTER_ID=$CCKEY
+    - CC_TEST_REPORTER_ID=fa0a231b5274066d6254ccfbf0c2fc393a5f568a8d25682a86d503290486fa7f
     - CCTR=./cc-test-reporter
     # set to whatever timezone your app assumes from this list:
     # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -34,7 +34,7 @@ script:
   - bundle exec rspec --exclude-pattern "spec/models/meeting_spec.rb"
   - $CCTR format-coverage --output coverage/codeclimate.$SUITE.json
   # run Cucumber scenarios, and capture coverage. --strict means undefined steps result in a failure.
-  - bundle exec cucumber 
+  - bundle exec cucumber
   # - $CCTR format-coverage --output coverage/codeclimate.$SUITE.json --input-type simplecov
 
 after_script:
